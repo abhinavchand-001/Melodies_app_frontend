@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 
-const url = "https://melodies-app-backend.vercel.app/";
+const url = "https://melodies-app-backend.vercel.app";
 
 export const Playercontext = createContext();
 const Playercontextprovider = (props) =>{
