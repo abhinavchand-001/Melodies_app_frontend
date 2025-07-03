@@ -46,6 +46,8 @@ const sidebar = () => {
           <MdOutlinePeopleAlt className="mr-3" /> Artists
         </Link>
 
+         <div className="iamhere_for_response">
+
         <p className="mb-5 text-[#ee10b0]"> Library</p>
         <Link className="iamlink  flex font-bold text-[15px] mb-4 text-white items-center-safe">
           <CiClock2 className="mr-3" /> Recently Added
@@ -68,6 +70,10 @@ const sidebar = () => {
           {" "}
           <IoAlbumsOutline className="mr-3" /> Add Playlist
         </Link>
+
+
+
+        </div>
       </div>
     </div>
   );
