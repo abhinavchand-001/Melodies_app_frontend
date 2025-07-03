@@ -1,0 +1,354 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Chocomilky';
+  src: url('./fonts/chocomilky2.otf');
+}
+@font-face {
+  font-family: 'Dearsnow';
+  src: url('./fonts/Dearsnow.ttf');
+}
+@font-face {
+  font-family: 'Dansdisney';
+  src: url('./fonts/DansDisney2.ttf');
+}
+@font-face {
+  font-family: 'Snowblue';
+  src: url('./fonts/SnowBlue.otf');
+}
+@font-face {
+  font-family: 'Robotoslab';
+  src: url('./fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
+}
+@font-face {
+  font-family: 'Robotoslab';
+  src: url('./fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('./fonts/Rubik/Rubik-Regular.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('./fonts/Ubuntu/Ubuntu-Medium.ttf');
+}
+@font-face {
+  font-family: 'Michroma';
+  src: url('./fonts/Michroma/Michroma-Regular.ttf');
+}
+
+
+.iamapp{
+  cursor: url(./cursors/cursor_resized_42x42.png) , auto;
+  
+}
+
+.iamlink{
+  cursor: url(./cursors/pointer_resized_42x42.png) , pointer;
+  font-family: 'Rubik';
+
+}
+
+#iambody{
+  font-family: 'Ubuntu';
+
+}
+
+
+
+
+
+
+
+ /* sidebar css  */
+
+ #iamsidebar{
+  background-color: #181818;
+  border-right: 2px solid #ee10b0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 
+    inset 0 0 0 0px rgba(238, 16, 175, 0.2),
+    4px 0 20px rgba(238, 16, 175, 0.3);
+}
+
+#insidethesidebar .menucontent{
+  transition: all 0.3s ease;
+}
+
+#insidethesidebar .menucontent:hover{
+  background-color: #ee10b0;
+  transform: translate(20px, -10px);
+  font-size: 22px;
+  border-radius: 7.5px;
+  padding-left: 5px;
+}
+
+.melodyheadline{
+  font-family: 'Dearsnow';
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  background-image: linear-gradient(to right, #ee10b0, #1022ee , #ee10b0, #1022ee);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-size: 200%;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    background-position: 0% ;
+  }
+  100%{
+    background-position: 200%;
+  }
+}
+
+
+
+ /* sidebar css  */
+
+
+
+ /* body css  */
+
+
+
+ /* topbar */
+
+ #iamtopbar{
+  position: absolute;
+  top: 0.5%;
+
+ }
+
+ /* topbar */
+
+/* contentinsidevideo */
+
+ #contentinsidevideo{
+  position: absolute;
+  top: 10%;
+  left: 4%;
+}
+
+/* contentinsidevideo */
+
+
+
+/* weeklytopsongs */
+
+
+ #weeklytopsongs{
+  font-family: 'Snowblue';
+  letter-spacing: 5px;
+}
+
+
+.iamsong{
+  position: relative;
+}
+
+.platbutton-in-iamsong {
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.iamsong:hover{
+  filter: blur(0.5px);
+}
+.iamsong:hover .platbutton-in-iamsong {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+/* weeklytopsongs */
+
+
+/* albums sections  */
+
+
+
+/* rgba(238, 16, 175, 0.3) */
+
+.i_am_only_for_background{
+  background-image: linear-gradient(270deg , #4d094d , #181818 );
+}
+
+/* albums sections  */
+
+
+
+/* Footer section  */
+
+
+
+
+.Footerheadname {
+  font-family: 'Snowblue';
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid white;
+}
+
+.Footermelodeisheadline{
+  transition: all 0.3s ease;
+  z-index: 2;
+
+}
+.Footerheadname .Footermelodeisheadline{
+  background-image: linear-gradient(to right, #ee10b0, #1022ee , #ee10b0, #1022ee);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-size: 200%;
+  animation: animate 10s linear infinite;
+  scale: 1.1;
+  letter-spacing: 0.2em;
+}
+
+
+.textareadiv textarea {
+  resize: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.textareadiv textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.textareadiv textarea{
+  border: 1px solid #1070ee;
+}
+.textareadiv textarea:focus{
+  border: 1px solid #ee10b0;
+}
+
+
+.formbutton{
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+
+}
+
+
+.formbutton::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  background-color: #1070ee;
+  transition: all 0.1s linear;
+
+}
+
+.formbutton:hover::before{
+top: 0;
+}
+
+.formbutton:hover{
+color: black;
+
+}
+
+/* socialmediabutton */
+
+
+
+
+/* socialmediabutton */
+
+
+
+/* Footer section  */
+
+ 
+ /* body css  */
+
+ /* playpause button */
+
+
+
+ .playpauseicon:hover{
+ animation: animate2 0.5s ease-in;
+ }
+
+
+ @keyframes animate2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(120deg);
+  }
+  60% {
+    transform: rotate(40deg);
+  }
+  80% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.iamplaypause{
+  position : fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.hambar{
+  position: relative;
+  border-radius: 2px;
+}
+
+.insidethehambar{
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+
+}
+.circle{
+  border-radius: 30%;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: all 0.3s ease;
+}
+
+.volumebar{
+  position: relative;
+  border-radius: 2px;
+}
+.insidevolumebar{
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+
+}
+.volumecircle{
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: all 0.3s ease;
+}
+
+ /* playpause button */

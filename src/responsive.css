@@ -1,0 +1,58 @@
+@media (max-width: 1266px) {
+    #videocontainer {
+        /* position: relative; */
+        overflow: hidden;
+    }
+
+    #contentinsidevideo {
+        position: absolute;
+        top: 10%;
+        
+        width: auto;
+        max-width: 25vw;
+        transform: translateX(182%);
+        text-align: right;
+    }
+
+    .maintext{
+        font-size: 15px;
+    }
+
+   
+}
+
+@media (min-width: 766px) and (max-width: 1266px){
+    
+
+    .footer_text{
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 766px){
+
+    #contentinsidevideo{
+        display: none;
+    }
+
+    .belowtheheadname{
+        flex-direction: column;
+    }
+
+    .footer_text{
+        font-size: 2vw;
+    }
+
+    .about_text{
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .textareadiv{
+        margin-top: 8vh;
+        width: 80%;
+    }
+    
+}
