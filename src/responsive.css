@@ -18,6 +18,10 @@
         font-size: 15px;
     }
 
+    .melodyheadline{
+        font-size: 22px;
+    }
+
    
 }
 
@@ -54,5 +58,63 @@
         margin-top: 8vh;
         width: 80%;
     }
+    
+}
+
+@media (max-width: 1011px) {
+
+    .menucontent{
+        font-size: 14px;
+        width: 110px;
+    }
+
+  #videocontainer{
+    width: 71vw;
+  }
+
+  #iamtopbar{
+    width: 95%;
+  }
+
+  
+
+    #insidethesidebar .menucontent:hover{
+        background-color: #ee10b0;
+        transform: translate(20px, -10px);
+        font-size: 15px;
+        border-radius: 7.5px;
+        padding-left: 2px;
+      }
+
+      .iamhere_for_response{
+        display: none;
+      }
+      
+      #iamsidebar{
+        position : sticky;
+        top: 0;
+      }
+    
+}
+
+@media (max-width: 700px) {
+
+    #videocontainer{
+        display: none;
+    }
+
+    #iamsidebar{
+        display: none;
+    }
+
+    #iambody{
+        width: 100vw;
+    }
+    
+    #weeklytopsongs{
+        margin-top: 20vh;
+    }
+
+
     
 }
