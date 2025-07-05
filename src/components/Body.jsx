@@ -28,7 +28,7 @@ const body = () => {
         id="weeklytopsongs"
         className=" ml-12 mb-15 mt-10 text-3xl  text-white "
       >
-        Weekly Top <span className="font-semibold text-[#ee10b0]">Songs</span>
+        Weekly Top <span className="font-semibold text-[#ee10b0]">Albums</span>
       </h4>
       <div className="flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
         {albumData.map((item, index) => (
@@ -46,7 +46,7 @@ const body = () => {
 
 
       <h4 id="weeklytopsongs" className=" ml-12 mb-15 text-3xl  text-white ">
-        New Release <span className="font-semibold text-[#ee10b0]">Songs</span>
+        All Time Top <span className="font-semibold text-[#ee10b0]">Songs</span>
       </h4>
       <div className="flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
         {songsData.map((item, index) => (
