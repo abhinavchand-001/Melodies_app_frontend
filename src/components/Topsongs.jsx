@@ -14,7 +14,7 @@ const Topsongs = ({image, name , desc , id}) => {
 
   return (
     <div onClick={handleClick} className="iamsong iamlink flex flex-col h-60 w-50 gap-1 p-3 mb-8 hover:bg-[#272727] items-center justify-center cursor-pointer">
-      <div className="h-47 w-38 "> <img src={image} alt="" /></div>
+      <div className="h-47 w-38 overflow-hidden"> <img src={image} alt="" /></div>
       <p className="text-white font-bold">{name}</p>
       <p className="text-[#d1c5ee] text-center text-[15px]">{desc}</p>
 

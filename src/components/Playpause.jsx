@@ -18,11 +18,11 @@ const { track , seekbg , seekbar , playing , play , pause, duration , previous ,
     <div className='iamplaypause h-[5rem] w-full bg-[#000000] text-white font-bold flex items-center justify-between p-10' >
       
       {/* song details */}
-      <div className='flex gap-5 font-bold'>
+      <div className='flex gap-5 font-bold '>
        <img className='w-12' src={track.image} alt="" />
        <div className='flex flex-col gap-2'>
        <p className='font-bold'>{track.name}</p>
-       <p className='text-xs text-[#d1c5ee]'>{track.desc.slice(0, 12)}</p>
+       <p className='text-xs text-[#d1c5ee]'>{track.desc.slice(0, 32)}</p>
 
        </div>
       </div>
