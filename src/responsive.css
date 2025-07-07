@@ -6,8 +6,7 @@
 
     #contentinsidevideo {
         position: absolute;
-        top: 10%;
-        
+        top: 4%;  
         width: auto;
         max-width: 25vw;
         transform: translateX(182%);
@@ -76,6 +75,10 @@
     width: 95%;
   }
 
+  #contentinsidevideo{
+    top: 3.5%;
+  }
+
   
 
     #insidethesidebar .menucontent:hover{
@@ -115,21 +118,6 @@
         margin-top: 20vh;
     }
 
-       .footer_text{
-        font-size: 15px;
-    }
-
 
     
-}
-
-@media (max-width: 516px) {
-    
-         .footer_text{
-        font-size: 3vw;
-    }
-
-    .Footermelodeisheadline{
-        margin-bottom: 2vh;
-    }
 }
