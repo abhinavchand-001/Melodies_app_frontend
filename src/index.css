@@ -331,7 +331,7 @@ color: black;
   bottom: -6px;
   transition: all 0.3s ease;
 }
-
+/* 
 .volumebar{
   position: relative;
   border-radius: 2px;
@@ -349,6 +349,6 @@ color: black;
   left: 0;
   bottom: -4px;
   transition: all 0.3s ease;
-}
+} */
 
  /* playpause button */

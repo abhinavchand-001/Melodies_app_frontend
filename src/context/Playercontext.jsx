@@ -12,15 +12,11 @@ const Playercontextprovider = (props) =>{
     const seekbg = useRef(null);
     const seekbar = useRef(null);
 
-    const volumeBarRef = useRef(null);
-    const insideVolumeRef = useRef(null);
-    const volumeCircleRef = useRef(null);
-
     const [songsData, setSongsData] = useState([]);
     const [albumData, setAlbumData] = useState([]);
     const [track , setTrack] = useState(songsData[0]);
     const [playing , setPlaying] = useState(false);
-    const [volume, setVolume] = useState(0.5);
+    const [volume, setVolume] = useState(0.1);
     const [duration , setDuration] = useState({
         currentduration: {
             seconds: 0,
@@ -101,52 +97,24 @@ const Playercontextprovider = (props) =>{
     }
 
    
+// Function to convert linear slider value to perceived volume
+const getPerceivedVolume = (value) => {
+    // This formula creates a more natural volume curve
+    return Math.pow(value, 2) * 0.5
+  }
+  
+  // Function to convert perceived volume back to slider value
+  const getSliderValue = (volume) => {
+    return Math.sqrt(volume * 2)
+  }
+  
+  const toggleMute = () => {
+    const newVolume = volume === 0 ? 0.5 : 0;
+    setVolume(newVolume);
+    audioRef.current.volume = newVolume;
+  };
 
 
-
-    useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.volume = volume;
-        }
-    }, [volume]);
-
-    const setVolumeLevel = (level) => {
-        setVolume(level);
-    };
-
-    const increaseVolume = () => {
-        if (volume < 1) {
-            setVolume(prev => Math.min(prev + 0.1, 1));
-        }
-    };
-
-    const decreaseVolume = () => {
-        if (volume > 0) {
-            setVolume(prev => Math.max(prev - 0.1, 0));
-        }
-    };
-
-    const toggleMute = () => {
-        setVolume(prev => prev === 0 ? 0.5 : 0);
-    };
-
-
-    const handleVolumeClick = (e) => {
-        if (volumeBarRef.current) {
-            const rect = volumeBarRef.current.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
-            const width = rect.width;
-            const newVolume = clickX / width;
-            setVolumeLevel(newVolume);
-        }
-    };
-
-    useEffect(() => {
-        if (insideVolumeRef.current && volumeCircleRef.current) {
-            insideVolumeRef.current.style.width = `${volume * 100}%`;
-            volumeCircleRef.current.style.left = `${volume * 100}%`;
-        }
-    }, [volume]);
 
 
     const getSongsData = async () => {
@@ -224,17 +192,13 @@ const Playercontextprovider = (props) =>{
         previous,
         next,
         seekbarsong,
-        volume,
-        setVolumeLevel,
-        increaseVolume,
-        decreaseVolume,
-        toggleMute,
-        volumeBarRef,
-        insideVolumeRef,
-        volumeCircleRef,
-        handleVolumeClick,
         songsData,
-        albumData
+        albumData,
+        volume,
+        setVolume,
+        getPerceivedVolume,
+        getSliderValue,
+        toggleMute
 
     }
 
