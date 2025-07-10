@@ -7,6 +7,8 @@ const Newreleasesongs = ({image, name , desc , id}) => {
 const {playwithid} = useContext(Playercontext)
 
 const handelclick = () => {
+  const todisplay = document.querySelector(".iamplaypause");
+  todisplay.style.display = "flex";
   playwithid(id)
 }
   return (
