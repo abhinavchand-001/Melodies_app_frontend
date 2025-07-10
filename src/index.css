@@ -124,6 +124,12 @@
 
  }
 
+ .suggestion_bar{
+  position: absolute;
+  top: 100%;
+  
+ }
+
  /* topbar */
 
 /* contentinsidevideo */
@@ -132,6 +138,11 @@
   position: absolute;
   top: 4.7%;
   left: 4%;
+}
+
+.suggestion_bar{
+  border-top-right-radius: 20px ;
+  border-top-left-radius: 20px ;
 }
 
 /* contentinsidevideo */

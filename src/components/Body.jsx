@@ -15,12 +15,19 @@ const body = () => {
   const {songsData , albumData} = useContext(Playercontext)
 
 
+  const handelclick = () => {
+    const todisplay = document.querySelector(".suggestion_bar");
+     todisplay.style.display = "none";
+  }
+
+
   return (
     <div
-      id="iambody"
+      id="iambody "
+      onClick={handelclick}
       className=" relative min-h-[300vh] w-[81vw] flex  flex-col bg-[#181818] "
     >
-      <Videobody />
+      <Videobody  />
       <Topbar />
 
 
