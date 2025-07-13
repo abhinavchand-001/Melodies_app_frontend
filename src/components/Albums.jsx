@@ -22,6 +22,12 @@ const Albums = ({album}) => {
     })
     
   },[])
+
+  const playing  = (id) => {
+    playwithid(id)
+    const todisplay = document.querySelector(".iamplaypause");
+    todisplay.style.display = "flex";
+  }
   
 
 
@@ -49,7 +55,7 @@ const Albums = ({album}) => {
       <hr className='text-white w-[95%] mb-4'/>
 
       {songsData.filter((item) => item.album === album.name).map((song , index) => (
-        <div onClick={() => playwithid(song._id)}  key={index} className='iamlink grid grid-cols-4 items-center gap-2 p-2 mt-10 w-[95%] text-white hover:bg-[#272727b9]'>
+        <div onClick={() => playing(song._id)}  key={index} className='iamlink grid grid-cols-4 items-center gap-2 p-2 mt-10 w-[95%] text-white hover:bg-[#272727b9]'>
           <p className='gap-3 flex items-center'>
 
             <p className='text-gray-500 font-bold'>{index + 1}</p>
