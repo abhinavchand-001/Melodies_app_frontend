@@ -51,6 +51,8 @@ const Topbar = () => {
     playwithid(id);
     const todisplay = document.querySelector(".suggestion_bar");
     todisplay.style.display = "none";
+    const showsongbar = document.querySelector('.iamplaypause');
+    showsongbar.style.display = "flex";
   };
 
   // google authentication code

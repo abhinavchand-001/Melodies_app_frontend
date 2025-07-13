@@ -25,7 +25,7 @@ const body = () => {
     <div
       id="iambody "
       onClick={handelclick}
-      className=" relative min-h-[300vh] w-[81vw] flex  flex-col bg-[#181818] "
+      className="iamclassbody relative min-h-[300vh] w-[81vw] flex flex-col bg-[#181818] "
     >
       <Videobody  />
       <Topbar />
@@ -37,7 +37,7 @@ const body = () => {
       >
         Weekly Top <span className="font-semibold text-[#ee10b0]">Albums</span>
       </h4>
-      <div className="flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
+      <div className="songscontainer flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
         {albumData.map((item, index) => (
           <Topsongs
             key={index}
@@ -55,7 +55,7 @@ const body = () => {
       <h4 id="weeklytopsongs" className=" ml-12 mb-15 text-3xl  text-white ">
         All Time Top <span className="font-semibold text-[#ee10b0]">Songs</span>
       </h4>
-      <div className="flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
+      <div className="songscontainer flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
         {songsData.map((item, index) => (
           <Newreleasesongs
             key={index}

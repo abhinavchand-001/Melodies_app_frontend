@@ -122,13 +122,22 @@
         display: none;
     }
 
-    #iambody{
-        width: 100vw;
+    .iamclassbody{
+        width: 100%;
+        box-sizing: border-box;
     }
     
     #weeklytopsongs{
         margin-top: 20vh;
     }
+    .iamapp{
+        width: 100%;
+
+    }
+ .songscontainer{
+    justify-content: center;
+ }
+ 
 
 
     
