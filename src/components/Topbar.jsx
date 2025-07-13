@@ -11,7 +11,7 @@ import { Playercontext } from "../context/Playercontext";
 const url = "https://melodies-app-backend.vercel.app";
 
 const Topbar = () => {
-  const { playwithid } = useContext(Playercontext);
+  const { playwithid , duration } = useContext(Playercontext);
 
   const navigate = useNavigate();
   const [input, setInput] = useState("");
@@ -79,12 +79,12 @@ const Topbar = () => {
           />
         </div>
 
-        <div className="suggestion_bar h-[40vh] hidden w-[25vw] gap-y-20 ml-15 overflow-y-auto pt-5 pl-4 bg-[#181818]">
+        <div className="suggestion_bar h-[40vh] hidden w-[25vw] gap-y-20 ml-15 overflow-y-auto pt-5 pl-4 bg-[#181818] custom-scrollbar">
           {searchData.map((data, index) => (
             <div
               key={index}
               onClick={() => playsong(data._id)}
-              className="iamlink flex gap-5 font-bold mb-2 cursor-pointer hover:bg-[#2d2d2d] rounded-lg p-2"
+              className="iamlink flex  gap-5 font-bold mb-2 cursor-pointer hover:bg-[#2d2d2d] rounded-lg p-2"
             >
               <img className="w-12" src={data.image} alt="" />
               <div className="flex flex-col gap-2">
@@ -92,6 +92,7 @@ const Topbar = () => {
                 <p className="text-xs text-[#d1c5ee]">
                   {data.desc?.slice(0, 32)}
                 </p>
+
               </div>
             </div>
           ))}

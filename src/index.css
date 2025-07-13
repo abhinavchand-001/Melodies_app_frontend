@@ -120,7 +120,8 @@
 
  #iamtopbar{
   position: absolute;
-  top: 0.5%;
+  top: 0.2%;
+  
 
  }
 
@@ -363,3 +364,13 @@ color: black;
 } */
 
  /* playpause button */
+
+/* Hide scrollbar for suggestion_bar */
+.suggestion_bar::-webkit-scrollbar {
+  display: none;
+}
+
+.suggestion_bar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
