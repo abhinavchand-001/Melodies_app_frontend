@@ -33,11 +33,20 @@ const Playercontextprovider = (props) =>{
     const play = () => {
         audioRef.current.play();
         setPlaying(true);
+        const stop = document.querySelectorAll('.iammusicwave')
+        stop.forEach((item) => {
+            item.style.display = "block";
+        })
     }
 
     const pause = () =>{
         audioRef.current.pause();
         setPlaying(false);
+        const stop2 = document.querySelectorAll('.iammusicwave')
+        stop2.forEach((item) => {
+            item.style.display = "none";
+        })
+        
     }
 
     const playwithid = async (id) => {

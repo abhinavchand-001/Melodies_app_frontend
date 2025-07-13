@@ -6,6 +6,8 @@ import { CiPause1 } from "react-icons/ci";
 import { Playercontext } from "../context/Playercontext";
 import { CiVolumeHigh } from "react-icons/ci";
 import { CiVolumeMute } from "react-icons/ci";
+import musicwave from "../assets/musicwave.webm";
+
 
 const playpause = () => {
   const {
@@ -41,12 +43,15 @@ const playpause = () => {
       {/* play pause buttons  */}
 
       <div className="flex flex-col items-center justify-center ">
-        <div className="flex gap-7 font-bold text-4xl">
+        <div className="flex justify-center items-center gap-7 font-bold text-4xl">
+
+          <video className="iammusicwave h-[40px] w-[110px]" src={musicwave} autoPlay loop muted></video>
           <button onClick={previous}>
             <MdOutlineSkipPrevious className="iamlink playpauseicon  text-[#ee10b0] cursor-pointer" />
           </button>
 
-          {playing ? (
+          {playing ? (     
+            
             <button onClick={pause}>
               <CiPause1 className="iamlink" />
             </button>
@@ -55,9 +60,13 @@ const playpause = () => {
               <IoPlayOutline className=" iamlink playpauseicon" />
             </button>
           )}
+
+
           <button onClick={next}>
             <MdOutlineSkipNext className="iamlink playpauseicon text-[#ee10b0] " />
           </button>
+          <video  className="iammusicwave h-[40px] w-[110px]"  src={musicwave} autoPlay loop muted></video>
+
         </div>
 
         <div className="flex gap-5">
