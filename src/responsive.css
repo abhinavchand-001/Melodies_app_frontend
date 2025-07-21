@@ -6,7 +6,6 @@
 
     #contentinsidevideo {
         position: absolute;
-        top: 4%;  
         width: auto;
         max-width: 25vw;
         transform: translateX(186%);
@@ -42,7 +41,7 @@
 
   #contentinsidevideo{
     transform: translateX(165%);
-    top: 3.5%;
+    top: 1%;
   }
 
   
@@ -74,13 +73,13 @@
         font-size: 13.5px;
     }
     #contentinsidevideo{
-        top: 3.5%;
+        top: 2%;
       }
 }
 
 @media (max-width : 957px) {
     #contentinsidevideo{
-        top: 2.5%;
+        top: 1.5%;
       }
 }
 
