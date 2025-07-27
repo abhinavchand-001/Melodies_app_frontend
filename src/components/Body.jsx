@@ -52,7 +52,7 @@ const body = () => {
 
 
 
-      <h4 id="weeklytopsongs" className=" ml-12 mb-15 text-3xl  text-white ">
+      <h4 id="weeklytopsongs" className="songslist ml-12 mb-15 text-3xl  text-white ">
         All Time Top <span className="font-semibold text-[#ee10b0]">Songs</span>
       </h4>
       <div className="songscontainer flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">

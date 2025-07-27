@@ -6,7 +6,7 @@ import { CiPause1 } from "react-icons/ci";
 import { Playercontext } from "../context/Playercontext";
 import { CiVolumeHigh } from "react-icons/ci";
 import { CiVolumeMute } from "react-icons/ci";
-import musicwave from "../assets/musicwave.webm";
+
 
 
 const playpause = () => {
@@ -33,19 +33,18 @@ const playpause = () => {
     <div className="iamplaypause hidden h-[5rem] w-full bg-[#000000] text-white font-bold items-center justify-between p-10">
       {/* song details */}
       <div className="flex gap-5 font-bold ">
-        <img className="w-12" src={track.image} alt="" />
+        <img className="track_image w-12 object-cover" src={track.image} alt="" />
         <div className="flex flex-col gap-2">
-          <p className="font-bold">{track.name}</p>
-          <p className="text-xs text-[#d1c5ee]">{track.desc.slice(0, 32)}</p>
+          <p className="track_name font-bold">{track.name}</p>
+          <p className="track_desc text-xs text-[#d1c5ee]">{track.desc.slice(0, 32)}</p>
         </div>
       </div>
 
       {/* play pause buttons  */}
 
       <div className="flex flex-col items-center justify-center ">
-        <div className="flex justify-center items-center gap-7 font-bold text-4xl">
+        <div className="button_contain flex justify-center items-center gap-7 font-bold text-4xl">
 
-          <video className="iammusicwave h-[40px] w-[110px]" src={musicwave} autoPlay loop muted></video>
           <button onClick={previous}>
             <MdOutlineSkipPrevious className="iamlink playpauseicon  text-[#ee10b0] cursor-pointer" />
           </button>
@@ -53,7 +52,7 @@ const playpause = () => {
           {playing ? (     
             
             <button onClick={pause}>
-              <CiPause1 className="iamlink" />
+              <CiPause1 className="iamlink playpauseicon" />
             </button>
           ) : (
             <button onClick={play}>
@@ -65,11 +64,10 @@ const playpause = () => {
           <button onClick={next}>
             <MdOutlineSkipNext className="iamlink playpauseicon text-[#ee10b0] " />
           </button>
-          <video  className="iammusicwave h-[40px] w-[110px]"  src={musicwave} autoPlay loop muted></video>
 
         </div>
 
-        <div className="flex gap-5">
+        <div className="iamseekbar flex gap-5">
           <p>
             {duration.currentduration.minutes}:
             {duration.currentduration.seconds}
@@ -95,21 +93,9 @@ const playpause = () => {
         </div>
       </div>
 
-      {/* volume up and down  */}
+  
 
-      {/* <div className='flex gap-3 items-center justify-center'> 
-        <div onClick={handleVolumeClick} className='iamlink volumebar h-[5px] w-[8vw] bg-[#fff]'>
-          <div ref={insideVolumeRef} className='insidevolumebar h-[5px] w-[0px] bg-[#1070ee]'></div>
-          <div ref={volumeCircleRef} className='volumecircle h-[15px] w-[15px] bg-[#ee10b0]'></div>
-        </div>
-
-        
-        <button><CiVolumeHigh className='iamlink text-2xl font-bold'/></button>
-        <button><CiVolumeMute className='iamlink text-2xl font-bold'/></button>
-
-      </div> */}
-
-      <div className="flex gap-3 items-center justify-center">
+      <div className="iam_volume_container flex gap-3 items-center justify-center">
         <button onClick={toggleMute} className="iamlink text-2xl font-bold">
           {volume === 0 ? <CiVolumeMute /> : <CiVolumeHigh />}
         </button>

@@ -136,8 +136,108 @@
  .songscontainer{
     justify-content: center;
  }
+  
+}
+
+@media (max-width: 400px) {
+    .iam_volume_container{
+        display: none;
+    }
+
+    .iammusicwave{
+        display: none;
+    }
+    .iamplaypause{
+        padding: 20px;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr;
+        grid-gap: 10px;
+    }
+
+    .track_image{
+       font-size: 6px;
+    }
+
+    .track_name{
+        font-size: 15px;
+    }
+
+    .track_desc{
+        font-size: 10px;
+    }
+    .iamseekbar{
+        display: none;
+    }
+
+    .playpauseicon{
+        font-size: 30px;
+    }
+    .button_contain{
+        gap: 10px;
+    }
+    .newrelease_songs{
+        display: none;
+    }
+    .songslist{
+        display: none;
+    }
+    .footer_text{
+        font-size: 3.5vw;
+    }
+    .belowtheheadname{
+        padding: 0px;
+    }
+    .Footerheadname{
+        margin-bottom: 6vh;
+    }
+    .about_text{
+        width: 80%;
+        justify-content: center;
+        align-items: center;
+    }
+    .socialmediabutton{
+        margin-left: 0px;
+    }
+
+   /* album resposiveness  */
+
+   .iamsong{
+    max-height: 200px;
+    max-width: 144px;
+    align-items: start;
+    margin-bottom: 10px;
+   }
+
+   .album_image{
+    max-width: 110px;
+    max-height: 100px;
+   }
+
+   .album_name{
+    font-size: 12px;
+    text-align: start;
+   }
  
+   .album_desc{
+    font-size: 10px;
+    text-align: start;
+   }
+   .songscontainer{
+    gap: 30px;
+    margin: 0px;
+    padding: 8px;
+    overflow: hidden;
+   }
 
+   .iamclassbody{
+    overflow: hidden;
+   }
 
-    
+   .iamplaypause{
+    display: none;
+   }
+ 
 }

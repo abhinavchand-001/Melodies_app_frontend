@@ -50,7 +50,10 @@ const Footer = () => {
             <span className="font-semibold text-[#1070ee]">premium pass </span>{" "}
             .
           </p>
+          <div className="iamsocialmedia_button ">
           <Socialmediabutton/>
+
+          </div>
         </div>
 
         <form
