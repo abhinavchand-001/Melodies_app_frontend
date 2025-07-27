@@ -49,7 +49,7 @@ const Albums = ({album}) => {
       <div className=' grid grid-cols-4 items-center gap-6 p-2 mt-10 w-[95%] text-white font-bold text-[17px]'>
         <p className='gap-5 flex'> <b>#</b> Title</p>
         <p>Albums</p>
-        <p className='ml-[-10px]'>Date Added</p>
+        <p className='ml-[-10px]'>Artists</p>
         <p>Time</p>
       </div>
       <hr className='text-white w-[95%] mb-4'/>
@@ -64,7 +64,7 @@ const Albums = ({album}) => {
           </p>
 
           <p>{albumsData.name}</p>
-          <p>5 Days Ago</p>
+          <p>{song.desc}</p>
           <p className='flex items-center gap-5'> <FaRegHeart className='text-[#4e8af8] text-2xl'/>{song.duration}</p>
 
         </div>
