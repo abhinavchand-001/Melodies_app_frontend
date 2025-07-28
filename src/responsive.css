@@ -226,9 +226,9 @@
     text-align: start;
    }
    .songscontainer{
-    gap: 30px;
+    gap: 10px;
     margin: 0px;
-    padding: 8px;
+    padding: 5px;
     overflow: hidden;
    }
 
@@ -239,5 +239,47 @@
    .iamplaypause{
     display: none;
    }
+
+   .Mobile_acnchor_tag{
+    transform: rotateZ(270deg);
+    transition: all 0.2s ease;
+
+   }
+
+ .iamfooter{
+    transition: 1s ease-in-out;
+ }
+
+ .Mobile_acnchor_tag:hover {
+    color: white;
+  }
+
+  .topbar_content{
+    display: none;
+  }
+  #iamsearchbar{
+    width: 40vw;
+    /* background-color: pink; */
+    transition: width 0.2s ease-in;
+    margin-left: 8vw;
+    
+  }
+  #iamsearchbar:hover{
+    width: 75vw;
+    
+  }
+
+  #weeklytopsongs{
+    margin-left: 8vw;
+  }
+
+  .Mobile_navbaar{
+    display: flex;
+  }
+
+  .only_for_mobile{
+    overflow: visible;
+  }
+
  
 }

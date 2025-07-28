@@ -99,7 +99,7 @@ const Topbar = () => {
         </div>
       </div>
 
-      <div className="flex items-center gap-9 mr-15">
+      <div className="topbar_content flex items-center gap-9 mr-15">
         {/* // google authentication code */}
 
         {isAuthenticated && (

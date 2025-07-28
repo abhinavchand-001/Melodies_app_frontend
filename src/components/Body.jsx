@@ -9,8 +9,11 @@ import Newreleasesongs from "./Newreleasesongs";
 import { useContext } from "react";
 import { Playercontext } from "../context/Playercontext";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const body = () => {
+  const navigate = useNavigate();
 
   const {songsData , albumData} = useContext(Playercontext)
 
@@ -22,6 +25,25 @@ const body = () => {
 
 
   return (
+    
+    <div className="only_for_mobile overflow-hidden flex">
+
+
+
+      {/* // this code is only for mobiles version  eg- pixels below 400 */}
+
+      <div className="Mobile_navbaar sticky top-0 left-0 h-dvh w-[12vw] bg-[#181818] hidden flex-col gap-15 p-2 pl-7">
+
+        <a className="Mobile_acnchor_tag mt-20 text-[#084c74] " href="#weeklytopsongs">Albums</a>
+        <a className="Mobile_acnchor_tag text-[#084c74]" href="#footer">Connect</a>
+        <a className="Mobile_acnchor_tag text-[#084c74]" onClick={() => navigate("/about")}>About</a>
+
+    
+
+      </div>
+
+
+    
     <div
       id="iambody "
       onClick={handelclick}
@@ -39,7 +61,7 @@ const body = () => {
       </h4>
       <div className="songscontainer flex flex-wrap flex-row m-10 mt-0 gap-6 p-4">
         {albumData.map((item, index) => (
-          <Topsongs
+          <Topsongs 
             key={index}
             image={item.image}
             name={item.name}
@@ -68,6 +90,7 @@ const body = () => {
       </div>
 
       <Footer />
+    </div>
     </div>
   );
 };

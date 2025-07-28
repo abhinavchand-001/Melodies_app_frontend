@@ -32,7 +32,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="iamfooter min-h-[50vh] max-w-screen flex justify-center items-center flex-col mt-10 ">
+    <div id="footer" className="iamfooter min-h-[50vh] max-w-screen flex justify-center items-center flex-col mt-10 ">
       <div className="Footerheadname h-[20%] w-[90%] pt-10 flex items-center justify-center text-3xl font-bold text-white">
         <h1 className="Footermelodeisheadline">Melodies</h1>
       </div>
