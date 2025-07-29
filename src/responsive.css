@@ -261,7 +261,7 @@
     width: 40vw;
     /* background-color: pink; */
     transition: width 0.2s ease-in;
-    margin-left: 8vw;
+    margin-left: 6vw;
     
   }
   #iamsearchbar:hover{
@@ -281,5 +281,77 @@
     overflow: visible;
   }
 
- 
+  /* // suggestion bar responsiveness  */
+
+  .suggestion_bar{
+    /* background-color: aqua; */
+    width: 75vw;
+    margin-left: 6vw;
+    padding-left: 5px;
+    
+  }
+
+
+  /* album responsiveness  */
+
+  .iamalbum img {
+
+    width: 30vw;
+    height: 30vw;
+
+  }
+  .iamalbum h1 {
+
+    font-size: 25px;
+
+  }
+  .iamalbum p {
+
+    font-size: 12px;
+
+  }
+
+  .i_am_only_for_background{
+    background-image: linear-gradient(90deg , #4d094d , #181818 );
+  }
+
+  .album_container{
+    padding: 20px;
+  }
+
+  .album_list{
+    display: grid;
+    grid-template-columns: 15fr 1fr;
+    
+  }
+
+  .album_name2{
+    display: none;
+  }
+
+  .album_desc2{
+    display: none;
+  }
+  .like_icon{
+    display: none;
+  }
+
+  .song_name{
+    font-size: 12px;
+  }
+
+  .song_heading{
+    grid-template-columns: 0.1fr 12fr 1fr;
+    font-size: 15px;
+  }
+ .artist_heading{
+    display: none;
+ }
+
+ .song_image{
+    margin-right: 2px;
+ }
+ .heading_title{
+    gap: 10px;
+ }
 }
