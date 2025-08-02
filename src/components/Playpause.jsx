@@ -30,7 +30,7 @@ const playpause = () => {
   } = useContext(Playercontext);
 
   return track ? (
-    <div className="iamplaypause hidden h-[5rem] w-full bg-[#000000] text-white font-bold items-center justify-between p-10">
+    <div className="iamplaypause hidden h-[5rem] w-full bg-[#000000] text-white items-center justify-between font-bold p-10">
       {/* song details */}
       <div className="flex gap-5 font-bold ">
         <img className="track_image w-12 object-cover" src={track.image} alt="" />

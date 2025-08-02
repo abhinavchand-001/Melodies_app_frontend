@@ -33,18 +33,17 @@ const sidebar = () => {
           {" "}
           <RiCompassDiscoverLine className="mr-3" /> Discover
         </Link>
-        <div 
-          className="iamlink cursor-pointer menucontent w-[150px] flex font-bold text-[15px] mb-4 text-white items-center-safe"
-        >
+        <a href="#weeklytopsongs" className="iamlink cursor-pointer menucontent w-[150px] flex font-bold text-[15px] mb-4 text-white items-center-safe">
           {" "}
           <IoAlbumsOutline className="mr-3" /> Albums
-        </div>
+          
+        </a>
 
 
-        <Link className="iamlink menucontent w-[150px] flex font-bold text-[15px] mb-4 text-white items-center-safe">
+        <a href="#footer" className="iamlink menucontent w-[150px] flex font-bold text-[15px] mb-4 text-white items-center-safe">
           {" "}
-          <MdOutlinePeopleAlt className="mr-3" /> Artists
-        </Link>
+          <MdOutlinePeopleAlt className="mr-3" /> Connect
+        </a>
 
          <div className="iamhere_for_response">
 
