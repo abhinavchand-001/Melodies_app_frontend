@@ -63,7 +63,7 @@ const Topbar = () => {
   return (
     <div
       id="iamtopbar"
-      className=" h-20 w-[100%] flex pt-5 items-center justify-between text-3xl font-bold z-20"
+      className=" h-20 w-[100%] flex pt-5 items-center justify-between text-3xl font-bold z-4"
     >
       <div className="complete_search_bar flex flex-col">
         <div

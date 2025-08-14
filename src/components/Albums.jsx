@@ -32,7 +32,7 @@ const Albums = ({album}) => {
 
 
   return albumsData ? (
-    <div className='album_container bg-[#181818] w-full min-h-[100vh] flex flex-col items-center overflow-hidden p-10 '>
+    <div className='album_container bg-[#181818] w-full min-h-[100vh] flex flex-col items-sta overflow-hidden p-10 '>
 
       <div className='i_am_only_for_background w-full  h-full '>
 

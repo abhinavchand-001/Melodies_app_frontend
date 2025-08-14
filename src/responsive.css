@@ -147,14 +147,34 @@
     .iammusicwave{
         display: none;
     }
-    .iamplaypause{
+    .iamtop_playpause{
         padding: 20px;
         display: grid;
-        justify-items: center;
+        justify-items: start;
         align-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2fr;
+        grid-template-columns: 4fr 1fr;
         grid-gap: 10px;
+        transition: display 0.5s ease-out;
+        
+    }
+
+    .iamplaypause{
+      top: 89%;
+      justify-items: center;
+      align-items: center;
+      justify-content: start;
+      transition: top 0.2s ease-in-out;
+    
+    }
+
+
+    .name_and_desc{
+      max-width: 150px;
+
+    }
+
+    .track-items{
+      gap: 1;
     }
 
     .track_image{
@@ -163,17 +183,29 @@
 
     .track_name{
         font-size: 15px;
+        white-space: nowrap;     
+        overflow: hidden;        
+        text-overflow: ellipsis;  
+        max-width: 100%; 
     }
 
     .track_desc{
         font-size: 10px;
-    }
+        white-space: nowrap;      
+        overflow: hidden;         
+        text-overflow: ellipsis;  
+        max-width: 100%; 
+
+      }
     .iamseekbar{
         display: none;
     }
 
     .playpauseicon{
         font-size: 30px;
+    }
+    .playpauseicon2{
+        font-size: 35px;
     }
     .button_contain{
         gap: 10px;
