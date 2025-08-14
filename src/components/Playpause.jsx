@@ -63,7 +63,7 @@ const playpause = () => {
   } = useContext(Playercontext);
 
   return track ? (
-    <div className="iamplaypause flex h-[100vh] w-full bg-[#000000] flex-col text-white items-start justify-between font-bold ">
+    <div className="iamplaypause hidden h-[100vh] w-full bg-[#000000] flex-col text-white items-start justify-between font-bold ">
 
       <div className="iamtop_playpause flex items-center justify-between w-full pt-3 p-10">
 
