@@ -4,11 +4,20 @@ import { useParams } from 'react-router-dom'
 import { useContext } from 'react';
 import { Playercontext } from "../context/Playercontext";
 import { FaRegHeart } from "react-icons/fa";
+import { MdOutlineArrowBackIos } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 
 const Albums = ({album}) => {
+
+ const navigate = useNavigate();
+
+ const handleClick3 = () => {
+  navigate('/');
+ }
 
   const {id}= useParams()
   const [albumsData , setAlbumsData] = useState("")
@@ -35,6 +44,12 @@ const Albums = ({album}) => {
     <div className='album_container bg-[#181818] w-full min-h-[100vh] flex flex-col items-sta overflow-hidden p-10 '>
 
       <div className='i_am_only_for_background w-full  h-full '>
+
+            <div className="w-full p-5 mb-5">
+                  <button onClick={handleClick3} className='iamlink'>
+                    <MdOutlineArrowBackIos className="text-3xl text-white" />
+                  </button>
+                </div>
 
       <div className='iamalbum flex gap-8 w-full justify-between items-center p-5 '>
         <img className='h-60 w-60' src={albumsData.image} alt="" />

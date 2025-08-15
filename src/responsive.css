@@ -140,6 +140,10 @@
 }
 
 @media (max-width: 400px) {
+
+  .mobile_content{
+    display: block;
+  }
     .iam_volume_container{
         display: none;
     }
@@ -173,8 +177,14 @@
 
     }
 
+
+
     .track-items{
       gap: 1;
+    }
+
+    .iamseekbar{
+      display: none;
     }
 
     .track_image{
@@ -197,9 +207,7 @@
         max-width: 100%; 
 
       }
-    .iamseekbar{
-        display: none;
-    }
+
 
     .playpauseicon{
         font-size: 30px;

@@ -11,6 +11,9 @@ const Playercontextprovider = (props) =>{
     const audioRef = useRef(null);
     const seekbg = useRef(null);
     const seekbar = useRef(null);
+    const mobile_seekbg = useRef(null);
+    const mobile_seekbar = useRef(null);
+
 
     const [songsData, setSongsData] = useState([]);
     const [albumData, setAlbumData] = useState([]);
@@ -98,12 +101,45 @@ const Playercontextprovider = (props) =>{
     seekbar.current.style.width = `${progress * 100}%`;
     seekbg.current.style.left = `${progress * 100}%`;
   }
-  
+
+
+
   // Ensure audio continues playing
   if (playing) {
       audioRef.current.play();
   }        
     }
+
+    //only for mobile 
+
+    const mobile_seekbarsong = async (e) => {
+        // Get the bounding rectangle of the parent container
+        const rect = mobile_seekbar.current.parentElement.getBoundingClientRect();
+        // Calculate the click position relative to the container
+        const x = e.clientX - rect.left;
+        // Get the width of the container
+        const width = rect.width;
+        // Calculate progress (0-1)
+        const progress = x / width;
+        // Set the audio time
+        audioRef.current.currentTime = progress * audioRef.current.duration;
+        
+        // Update seekbar width immediately
+        if(mobile_seekbar.current && mobile_seekbg.current) {
+          mobile_seekbar.current.style.width = `${progress * 100}%`;
+          mobile_seekbg.current.style.left = `${progress * 100}%`;
+        }
+      
+      
+      
+        // Ensure audio continues playing
+        if (playing) {
+            audioRef.current.play();
+        }        
+          }
+
+
+
 
    
 // Function to convert linear slider value to perceived volume
@@ -164,6 +200,10 @@ const getPerceivedVolume = (value) => {
                         seekbar.current.style.width = (Math.floor(audioRef.current.currentTime / audioRef.current.duration * 100)) + "%";
                         seekbg.current.style.left = (Math.floor(audioRef.current.currentTime / audioRef.current.duration * 100)) + "%";
                     }
+                    if(mobile_seekbar.current && mobile_seekbg.current) {
+                        mobile_seekbar.current.style.width = (Math.floor(audioRef.current.currentTime / audioRef.current.duration * 100)) + "%";
+                        mobile_seekbg.current.style.left = (Math.floor(audioRef.current.currentTime / audioRef.current.duration * 100)) + "%";
+                    }
                     setDuration({
                         currentduration: {
                             seconds: Math.floor(audioRef.current.currentTime % 60),
@@ -189,6 +229,8 @@ const getPerceivedVolume = (value) => {
         audioRef,
         seekbg,
         seekbar,
+        mobile_seekbg,
+        mobile_seekbar,
         track,
         setTrack,
         playing,
@@ -201,6 +243,7 @@ const getPerceivedVolume = (value) => {
         previous,
         next,
         seekbarsong,
+        mobile_seekbarsong,
         songsData,
         albumData,
         volume,
@@ -218,4 +261,5 @@ const getPerceivedVolume = (value) => {
     )
 }
 
-export default Playercontextprovider;
+
+export default Playercontextprovider 

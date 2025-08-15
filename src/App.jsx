@@ -6,7 +6,7 @@ import { Routes, Route , useLocation } from "react-router-dom";
 import Albums from "./components/Albums";
 import { Playercontext } from "./context/Playercontext";
 import About_us from "./components/About_us";
-import { initGradientUpdater } from './gradientUpdater';
+
 // import Socialmediabutton from "./components/Socialmediabutton";
 
 const App = () => {
@@ -17,8 +17,8 @@ const App = () => {
   const isAlbum = location.pathname.includes("album");
   const albumId = isAlbum ? location.pathname.split('/').pop() : "";
 
- initGradientUpdater();
-   return (
+
+   return ( 
     <div ref={displayRef} className="iamapp  flex min-h-[100vh] max-w-screen">
       {songsData.length !== 0 ? (
         <>
