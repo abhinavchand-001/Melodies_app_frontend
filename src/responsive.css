@@ -152,7 +152,10 @@
         display: none;
     }
     .iamtop_playpause{
-        padding: 20px;
+      
+        padding-left: 15px;
+        padding-top: 12px;
+        padding-right: 10px;
         display: grid;
         justify-items: start;
         align-items: center;
