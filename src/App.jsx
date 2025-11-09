@@ -19,7 +19,7 @@ const App = () => {
 
 
    return ( 
-    <div ref={displayRef} className="iamapp  flex min-h-[100vh] max-w-screen">
+    <div ref={displayRef} className="iamapp flex min-h-[100vh] max-w-screen">
       {songsData.length !== 0 ? (
         <>
           <Sidebar />

@@ -191,7 +191,7 @@
 .i_am_only_for_background {
 
   background-image: linear-gradient(270deg,  #4d094d, #181818);
-  transition: background-image 1s ease-in-out;
+  
 }
 
 /* albums sections  */
