@@ -7,6 +7,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
+import { FaShuffle } from "react-icons/fa6";
+
 
 const Albums = ({ album }) => {
   const bgRef = useRef(null);
@@ -65,7 +67,7 @@ const Albums = ({ album }) => {
   }, []);
 
   const playing = (id) => {
-    playwithid(id);
+    playwithid(id, albumsData.name);
     const todisplay = document.querySelector(".iamplaypause");
     todisplay.style.display = "flex";
   };
@@ -79,8 +81,9 @@ const Albums = ({ album }) => {
           </button>
         </div>
 
-        <div className="iamalbum flex gap-8 w-full justify-between items-center p-5 ">
+        <div className="iamalbum relative flex gap-8 w-full justify-between items-center p-5 ">
           <img className="h-60 w-60" src={albumsData.image} alt="" />
+          <FaShuffle className="absolute top-57 cursor-pointer left-80 text-3xl text-white" />
 
           <div className="flex flex-col gap-2">
             <p className="text-white text-[15px] text-right">Album</p>

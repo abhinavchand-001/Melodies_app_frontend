@@ -19,6 +19,7 @@ const Playercontextprovider = (props) =>{
     const [albumData, setAlbumData] = useState([]);
     const [track , setTrack] = useState(songsData[0]);
     const [playing , setPlaying] = useState(false);
+    const [currentAlbum, setCurrentAlbum] = useState(null);
     const [volume, setVolume] = useState(0.1);
     const [duration , setDuration] = useState({
         currentduration: {
@@ -45,13 +46,16 @@ const Playercontextprovider = (props) =>{
         
     }
 
-    const playwithid = async (id) => {
+    const playwithid = async (id, albumName = null) => {
         await songsData.map((item)=>{
             if(id === item._id){
                 setTrack(item)
                 
             }
         })
+
+        // Set or clear current album context
+        setCurrentAlbum(albumName);
 
         await audioRef.current.play()
         setPlaying(true)
@@ -68,13 +72,26 @@ const Playercontextprovider = (props) =>{
       
 
     const next = async () => {
-
-        songsData.map(async (item, index) => {
-            if (track._id === item._id && index < songsData.length ) {
-              await setTrack(songsData[index + 1]);
-              await audioRef.current.play();
+        // If we're in an album context, play next song from that album
+        if (currentAlbum) {
+            const albumSongs = songsData.filter(song => song.album === currentAlbum);
+            const currentIndex = albumSongs.findIndex(song => song._id === track._id);
+            
+            if (currentIndex !== -1 && currentIndex < albumSongs.length - 1) {
+                await setTrack(albumSongs[currentIndex + 1]);
+                await audioRef.current.play();
+                setPlaying(true);
             }
-          });
+        } else {
+            // Default behavior: play next song from all songs
+            songsData.map(async (item, index) => {
+                if (track._id === item._id && index < songsData.length ) {
+                  await setTrack(songsData[index + 1]);
+                  await audioRef.current.play();
+                  setPlaying(true);
+                }
+              });
+        }
     }
 
     const seekbarsong = async (e) => {
@@ -183,7 +200,6 @@ const getPerceivedVolume = (value) => {
         getAlbumData();
     }, []);
 
-
     useEffect(() => {
         setTimeout(() => {
             if(audioRef.current) {
@@ -217,6 +233,39 @@ const getPerceivedVolume = (value) => {
 
     }, [audioRef])
 
+    // Handle song end - auto play next song in album
+    useEffect(() => {
+        if(audioRef.current) {
+            audioRef.current.onended = () => {
+                console.log('Song ended. Current album:', currentAlbum);
+                if (currentAlbum) {
+                    const albumSongs = songsData.filter(song => song.album === currentAlbum);
+                    console.log('Album songs:', albumSongs.length, 'Current track:', track?.name);
+                    const currentIndex = albumSongs.findIndex(song => song._id === track._id);
+                    console.log('Current index:', currentIndex, 'Total songs:', albumSongs.length);
+                    
+                    // Play next song if available
+                    if (currentIndex !== -1 && currentIndex < albumSongs.length - 1) {
+                        const nextSong = albumSongs[currentIndex + 1];
+                        console.log('Playing next song:', nextSong.name);
+                        setTrack(nextSong);
+                        setTimeout(() => {
+                            audioRef.current.play();
+                            setPlaying(true);
+                        }, 100);
+                    } else {
+                        console.log('Last song in album, stopping');
+                        // Last song in album, stop playing
+                        setPlaying(false);
+                    }
+                } else {
+                    console.log('No album context, stopping');
+                    // Default behavior: stop playing
+                    setPlaying(false);
+                }
+            }
+        }
+    }, [currentAlbum, track, songsData])
 
     const contextvalue = {
         audioRef,
@@ -243,7 +292,9 @@ const getPerceivedVolume = (value) => {
         setVolume,
         getPerceivedVolume,
         getSliderValue,
-        toggleMute
+        toggleMute,
+        currentAlbum,
+        setCurrentAlbum
 
     }
 
